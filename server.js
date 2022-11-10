@@ -5,14 +5,14 @@ const cors = require('cors');
 const http = require('http').Server(app);
 // const io = require('socket.io');
 
-let origin = 'http://localhost:3000';
-if (process.env.NODE_ENV === 'production') {
-  origin = 'https://socket-tester-production.up.railway.app/:3000';
-}
-console.log(origin);
+// let origin = 'http://localhost:3000';
+// if (process.env.NODE_ENV === 'production') {
+//   origin = 'https://socket-tester-production.up.railway.app/:3000';
+// }
+console.log(process.env);
 const socketIO = require('socket.io')(http, {
   cors: {
-    origin: origin,
+    origin: '*',
   },
 });
 const PORT = process.env.PORT || 3002;

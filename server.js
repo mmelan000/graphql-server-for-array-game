@@ -7,7 +7,7 @@ const http = require('http').Server(app);
 
 let origin = 'http://localhost:3000';
 if (process.env.NODE_ENV === 'production') {
-  origin = 'https://array-the-game-production.up.railway.app:3000';
+  origin = 'https://socket-tester-production.up.railway.app/:3000';
 }
 console.log(origin);
 const socketIO = require('socket.io')(http, {

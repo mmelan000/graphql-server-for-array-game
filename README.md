@@ -1,3 +1,3 @@
-# socket-io-server-for-array-game
+# graphql-server-for-array-game
 
 a server for one of my projects

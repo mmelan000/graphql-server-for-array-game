@@ -1,26 +1,22 @@
 const express = require('express');
-const { v4: uuidv4 } = require('uuid');
 const app = express();
-const cors = require('cors');
 const http = require('http').Server(app);
-// const io = require('socket.io');
-
-// let origin = 'http://localhost:3000';
-// if (process.env.NODE_ENV === 'production') {
-//   origin = 'https://socket-tester-production.up.railway.app/:3000';
-// }
-console.log(process.env);
+const cors = require('cors');
+const PORT = process.env.PORT || 3002;
+const { v4: uuidv4 } = require('uuid');
 const socketIO = require('socket.io')(http, {
   cors: {
     origin: '*',
+    credentials: true,
   },
 });
-const PORT = process.env.PORT || 3002;
+
+console.log(process.env);
 console.log(PORT);
 
-app.use(cors());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
+app.use(cors());
 
 let users = [];
 
